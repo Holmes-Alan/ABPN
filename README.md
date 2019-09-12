@@ -46,7 +46,7 @@ https://data.vision.ee.ethz.ch/cvl/DIV2K/
 
 https://github.com/LimBee/NTIRE2017
    
-### s2. Start training on Caffe
+### s2. Start training on Pytorch
 For user who already has installed Pytorch 1.1, simply just run the following code:
 ```sh
 $ python main.py
