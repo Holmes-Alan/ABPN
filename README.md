@@ -7,7 +7,7 @@ This repo only provides simple testing codes, pretrained models and the network 
 We propose a single image super-resolution using Attention based Back Projection Network (ABPN) to achieve good SR performance with low distortion.
 
 
-# For proposed HBPN model, we claim the following points:
+# For proposed ABPN model, we claim the following points:
 
 • Attention Back Projection Block to learn cross-correlation of features.
 
