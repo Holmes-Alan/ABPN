@@ -23,7 +23,7 @@ We propose a single image super-resolution using Attention based Back Projection
 # Complete Architecture
 The complete architecture is shown as follows,
 
-
+![network](/figure/network.png)
 
 # Implementation
 ## 1. Testing
