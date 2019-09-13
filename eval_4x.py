@@ -33,7 +33,7 @@ parser.add_argument('--gpus', default=1, type=int, help='number of gpu')
 parser.add_argument('--image_dataset', type=str, default='/home/data1/Test')
 parser.add_argument('--model_type', type=str, default='ABPN')
 parser.add_argument('--output', default='/home/data1/Test', help='Location to save checkpoint models')
-parser.add_argument('--model', default='Model/model_epoch_460.pth', help='sr pretrained base model')
+parser.add_argument('--model', default='Model/ABPN_4x.pth', help='sr pretrained base model')
 
 opt = parser.parse_args()
 
