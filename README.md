@@ -15,10 +15,10 @@ We propose a single image super-resolution using Attention based Back Projection
 
 # Dependencies
     Python > 3.0
-    OpenCV liberary
+    OpenCV library
     Pytorch 1.1 
     NVIDIA GPU + CUDA
-    MATLAB 6.0 and above
+    MATLAB 6.0 or above
 
 # Complete Architecture
 The complete architecture is shown as follows,
