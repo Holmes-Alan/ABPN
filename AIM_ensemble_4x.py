@@ -32,7 +32,7 @@ parser.add_argument('--gpus', default=1, type=int, help='number of gpu')
 parser.add_argument('--image_dataset', type=str, default='/home/data1/DIV2K_x4_test/LR')
 parser.add_argument('--model_type', type=str, default='ABPN')
 parser.add_argument('--image_output', default='/home/data1/DIV2K_x4_test/SR', help='Location to save checkpoint models')
-parser.add_argument('--model', default='Model/ABPN_v5.pth', help='sr pretrained base model')
+parser.add_argument('--model', default='Model/ABPN_4x.pth', help='sr pretrained base model')
 
 opt = parser.parse_args()
 
