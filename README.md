@@ -56,7 +56,11 @@ $ python main.py
   
 # Experimental results
 
-Testing results on AIM2019 RealSR can be downloaded from the following link:
+Validation results on AIM2019 16x fidelity SR can be downloaded from the following link:
+
+https://drive.google.com/open?id=1rMzeN-UmWoCNKoyApEAJ7uSF5ckX34-V
+
+Testing results on AIM2019 16x fidelity SR can be downloaded from the following link:
 
 https://drive.google.com/open?id=1lJFvNKSUxg-pioKqjA39GPqDvvv3ceYj
 
