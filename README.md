@@ -28,11 +28,17 @@ The complete architecture is shown as follows,
 # Implementation
 ## 1. Testing
 ---------------------------------------
-### s1. Run **AIM_ensemble.py**. Modify the directories of files based on your working environment.
+### s1. For AIM2019 Extreme Super-Resolution Challenge - Track 1: Fidelity, run **AIM_ensemble_16x.py**. Modify the directories of files based on your working environment.
 
-Testing images on AIM2019 Real Super-Resolution Challenge can be downloaded from the following link:
+Testing images on AIM2019 Extreme Super-Resolution Challenge - Track 1: Fidelity can be downloaded from the following link:
 
 https://competitions.codalab.org/competitions/20235
+
+### s2. For AIM2019 Constrained Super-Resolution Challenge - Track 3: Fidelity optimization, run **AIM_ensemble_4x.py**. Modify the directories of files based on your working environment.
+
+Testing images on AIM2019 Constrained Super-Resolution Challenge - Track 3: Fidelity optimization can be downloaded from the following link:
+
+https://competitions.codalab.org/competitions/20169
 
 General testing dataset (Set5, Set14, BSD100, Urban100 and Manga109) can be downloaded from:
 
@@ -47,22 +53,34 @@ https://data.vision.ee.ethz.ch/cvl/DIV2K/
 https://github.com/LimBee/NTIRE2017
    
 ### s2. Start training on Pytorch
-For user who already has installed Pytorch 1.1, simply just run the following code:
+For user who already has installed Pytorch 1.1, simply just run the following code for AIM2019 Constrained Super-Resolution Challenge - Track 3: Fidelity optimization:
 ```sh
-$ python main.py
+$ python main_4x.py
 ```
 
+or run the following code for AIM2019 Extreme Super-Resolution Challenge - Track 1: Fidelity:
+```sh
+$ python main_16x.py
+```
 ---------------------------
   
 # Experimental results
 
-Validation results on AIM2019 16x fidelity SR can be downloaded from the following link:
+Validation results on AIM2019 Extreme Super-Resolution Challenge - Track 1: Fidelity can be downloaded from the following link:
 
 https://drive.google.com/open?id=1rMzeN-UmWoCNKoyApEAJ7uSF5ckX34-V
 
-Testing results on AIM2019 16x fidelity SR can be downloaded from the following link:
+Testing results on AIM2019 Extreme Super-Resolution Challenge - Track 1: Fidelity can be downloaded from the following link:
 
 https://drive.google.com/open?id=1lJFvNKSUxg-pioKqjA39GPqDvvv3ceYj
+
+Validation results on AIM2019 Constrained Super-Resolution Challenge - Track 3: Fidelity optimization can be downloaded from the following link:
+
+https://drive.google.com/open?id=12gCRnI7eUhSrb5F7TN8wm4aWXcP2c6oi
+
+Testing results on AIM2019 Constrained Super-Resolution Challenge - Track 3: Fidelity optimization can be downloaded from the following link:
+
+https://drive.google.com/open?id=1IMSBDtfMxEkn5v6Up3MZ0n-Uk3uN0BBm
 
 ## Partial image visual comparison
 
