@@ -89,12 +89,12 @@ https://drive.google.com/open?id=1IMSBDtfMxEkn5v6Up3MZ0n-Uk3uN0BBm
 ## Partial image visual comparison
 ## 1. Quantitative comparison
 We tested on several SR approaches on several datasets for PSNR and SSIM. We have achieve comparable or even better performance.
-![table](/figure/table.pdf)
+![table](/figure/table.png)
 
 ## 2. Model complexity
 Our proposed ABPN can use 2~3 times less parameters to achieve same PSNR performance!
-![complexity](/figure/complexity.pdf)
+![complexity](/figure/complexity.png)
 
 ## 3. Visualization comparison
 Results on 4x image SR on Urban100 dataset
-![visual](/figure/visualization.pdf)
+![visual](/figure/visualization.png)
