@@ -28,9 +28,9 @@ The complete architecture is shown as follows,
 # Implementation
 ## 1. Quick testing
 ---------------------------------------
-### copy your image to folder "LR" and run demo.py. The SR images are in folder "Result"
+### Copy your image to folder "LR" and run test.sh. The SR images will be in folder "Result"
 
-## 1. Testing
+## 2. Testing for AIM 2019
 ---------------------------------------
 ### s1. For AIM2019 Extreme Super-Resolution Challenge - Track 1: Fidelity, run **AIM_ensemble_16x.py**. Modify the directories of files based on your working environment.
 
@@ -48,7 +48,7 @@ General testing dataset (Set5, Set14, BSD100, Urban100 and Manga109) can be down
 
 https://github.com/LimBee/NTIRE2017
 
-## 2. Training
+## 3. Training
 ---------------------------
 ### s1. Download the training images from DIV2K and Flickr.
     
