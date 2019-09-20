@@ -26,6 +26,10 @@ The complete architecture is shown as follows,
 ![network](/figure/network.png)
 
 # Implementation
+## 1. Quick testing
+---------------------------------------
+### copy your image to folder "LR" and run demo.py. The SR images are in folder "Result"
+
 ## 1. Testing
 ---------------------------------------
 ### s1. For AIM2019 Extreme Super-Resolution Challenge - Track 1: Fidelity, run **AIM_ensemble_16x.py**. Modify the directories of files based on your working environment.
