@@ -1,12 +1,21 @@
-# ABPN (Attention based Back Projection Network for image ultra-resolution)
+# ABPN (Attention based Back Projection Network for image super-resolution)
 
 By Zhi-Song, Li-Wen Wang and Chu-Tak Li
 
 This repo only provides simple testing codes, pretrained models and the network strategy demo.
 
-We propose a single image super-resolution using Attention based Back Projection Network (ABPN) to achieve good SR performance with low distortion.
+We propose a single image super-resolution using Attention based Back Projection Network (ABPN) to achieve good SR performance with low distortion. The paper can be found in [arxiv](https://arxiv.org/abs/1910.04476)
 
+# BibTex
 
+        @InProceedings{Liu2019abpn,
+            author = {Liu, Zhi-Song and Wang, Li-Wen and Li, Chu-Tak and Siu, Wan-Chi},
+            title = {Image Super-Resolution via Attention based Back Projection Networks},
+            booktitle = {IEEE International Conference on Computer Vision Workshop(ICCVW)},
+            month = {October},
+            year = {2019}
+        }
+        
 # For proposed ABPN model, we claim the following points:
 
 • Attention Back Projection Block to learn cross-correlation of features.
