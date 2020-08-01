@@ -1,5 +1,5 @@
 # ABPN (Attention based Back Projection Network for image super-resolution)
-# We have merged the training codes of ABPN into ABPN++
+# We have merged the training codes of ABPN into [ABPN++](https://github.com/Holmes-Alan/ABPN_PLUS)
 
 By Zhi-Song, Li-Wen Wang and Chu-Tak Li
 
