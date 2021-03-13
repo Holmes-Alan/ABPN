@@ -26,7 +26,7 @@ parser.add_argument('--gpu_mode', type=bool, default=True)
 parser.add_argument('--chop_forward', type=bool, default=True)
 parser.add_argument('--patch_size', type=int, default=64, help='0 to use original frame size')
 parser.add_argument('--stride', type=int, default=64, help='0 to use original patch size')
-parser.add_argument('--threads', type=int, default=6, help='number of threads for data loader to use')
+parser.add_argument('--threads', type=int, default=0, help='number of threads for data loader to use')
 parser.add_argument('--seed', type=int, default=123, help='random seed to use. Default=123')
 parser.add_argument('--gpus', default=1, type=int, help='number of gpu')
 parser.add_argument('--image_dataset', type=str, default='LR')
@@ -36,9 +36,7 @@ parser.add_argument('--model', default='Model/ABPN_8x.pth', help='sr pretrained 
 
 opt = parser.parse_args()
 
-torch.cuda.current_device()
-torch.cuda.empty_cache()
-torch.backends.cudnn.benchmark = True
+
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 print('===> Building model ', opt.model_type)
@@ -82,8 +80,6 @@ def eval():
     logger.info(opt.image_output)
     idx = 0
 
-    start = torch.cuda.Event(enable_timing=True)
-    end = torch.cuda.Event(enable_timing=True)
 
     for i in range(LR_image.__len__()):
 
@@ -101,17 +97,16 @@ def eval():
         LR_270f = LR_270.transpose(Image.FLIP_LEFT_RIGHT)
 
         with torch.no_grad():
-            pred, time = chop_forward(LR, model, start, end)
-            pred_90, time_90 = chop_forward(LR_90, model, start, end)
-            pred_180, time_180 = chop_forward(LR_180, model, start, end)
-            pred_270, time_270 = chop_forward(LR_270, model, start, end)
-            pred_f, time_f = chop_forward(LR_f, model, start, end)
-            pred_90f, time_90f = chop_forward(LR_90f, model, start, end)
-            pred_180f, time_180f = chop_forward(LR_180f, model, start, end)
-            pred_270f, time_270f = chop_forward(LR_270f, model, start, end)
+            pred = chop_forward(LR, model)
+            pred_90 = chop_forward(LR_90, model)
+            pred_180 = chop_forward(LR_180, model)
+            pred_270 = chop_forward(LR_270, model)
+            pred_f = chop_forward(LR_f, model)
+            pred_90f = chop_forward(LR_90f, model)
+            pred_180f = chop_forward(LR_180f, model)
+            pred_270f = chop_forward(LR_270f, model)
 
-        compute_time = time + time_90 + time_180 + time_270 + time_f + time_90f + time_180f + time_270f
-        test_results['runtime'].append(compute_time)  # milliseconds
+
         pred_90 = np.rot90(pred_90, 3)
         pred_180 = np.rot90(pred_180, 2)
         pred_270 = np.rot90(pred_270, 1)
@@ -124,8 +119,6 @@ def eval():
 
         Image.fromarray(np.uint8(prediction)).save(SR_image[i])
 
-    ave_runtime = sum(test_results['runtime']) / len(test_results['runtime']) / 1000.0
-    logger.info('------> Average runtime of ({}) is : {:.6f} seconds'.format(opt.image_dataset, ave_runtime))
 
     # print("PSNR_predicted=", avg_psnr_predicted / count)
 
@@ -171,10 +164,9 @@ transform = transforms.Compose([
 )
 
 
-def chop_forward(img, network, start, end):
+def chop_forward(img, network):
 
     channel_swap = (1, 2, 0)
-    run_time = 0
     img = transform(img).unsqueeze(0)
     img_patch = img_splitter.split_img_tensor(img)
 
@@ -186,12 +178,9 @@ def chop_forward(img, network, start, end):
     for iteration, batch in enumerate(test_dataloader, 1):
         input = Variable(batch[0]).to(device)
 
-        start.record()
         with torch.no_grad():
             prediction = network(input)
-        end.record()
-        torch.cuda.synchronize()
-        run_time += start.elapsed_time(end)
+
 
         for j in range(prediction.shape[0]):
             out_box.append(prediction[j,:,:,:])
@@ -199,7 +188,7 @@ def chop_forward(img, network, start, end):
     SR = img_splitter.merge_img_tensor(out_box)
     SR = SR.data[0].numpy().transpose(channel_swap)
 
-    return SR, run_time
+    return SR
 
 
 
