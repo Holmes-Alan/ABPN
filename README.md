@@ -35,6 +35,13 @@ The complete architecture is shown as follows,
 ![network](/figure/network.png)
 
 # Implementation
+## 0. Installation
+a. Install conda on your computer. download the code to your local folder.
+b. create a conda environemnt by the following command
+```sh
+$ conda create --name ABPN --file requirements.txt
+```
+
 ## 1. Quick testing
 ---------------------------------------
 ### Copy your image to folder "LR" and run test.sh. The SR images will be in folder "Result"
