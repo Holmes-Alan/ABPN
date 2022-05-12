@@ -1,3 +1,13 @@
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/image-super-resolution-via-attention-based/image-super-resolution-on-bsd100-16x)](https://paperswithcode.com/sota/image-super-resolution-on-bsd100-16x?p=image-super-resolution-via-attention-based)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/image-super-resolution-via-attention-based/image-super-resolution-on-div2k-val-16x)](https://paperswithcode.com/sota/image-super-resolution-on-div2k-val-16x?p=image-super-resolution-via-attention-based)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/image-super-resolution-via-attention-based/image-super-resolution-on-div8k-val-16x)](https://paperswithcode.com/sota/image-super-resolution-on-div8k-val-16x?p=image-super-resolution-via-attention-based)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/image-super-resolution-via-attention-based/image-super-resolution-on-manga109-16x)](https://paperswithcode.com/sota/image-super-resolution-on-manga109-16x?p=image-super-resolution-via-attention-based)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/image-super-resolution-via-attention-based/image-super-resolution-on-urban100-16x)](https://paperswithcode.com/sota/image-super-resolution-on-urban100-16x?p=image-super-resolution-via-attention-based)
+
 # ABPN (Attention based Back Projection Network for image super-resolution)
 
 By Zhi-Song, Li-Wen Wang and Chu-Tak Li
